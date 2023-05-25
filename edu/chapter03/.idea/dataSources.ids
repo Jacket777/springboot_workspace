@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - springbootdata@127.0.0.1" uuid="5818af3c-f46c-44d0-ae8e-02970e5b30df">
+    <database-info product="MySQL" version="8.0.22" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="springbootdata"/>
+      <table id="2" parent="1" name="t_article"/>
+      <table id="3" parent="1" name="t_comment"/>
+      <column id="4" parent="2" name="id">
+        <comment>文章id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="5" parent="2" name="title">
+        <comment>文章标题</comment>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="6" parent="2" name="content">
+        <comment>文章内容</comment>
+        <data-type>longtext</data-type>
+      </column>
+      <key id="7" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="8" parent="3" name="id">
+        <comment>评论id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="9" parent="3" name="content">
+        <comment>评论内容</comment>
+        <data-type>longtext</data-type>
+      </column>
+      <column id="10" parent="3" name="author">
+        <comment>评论作者</comment>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="11" parent="3" name="a_id">
+        <comment>关联的文章</comment>
+        <data-type>int</data-type>
+      </column>
+      <key id="12" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

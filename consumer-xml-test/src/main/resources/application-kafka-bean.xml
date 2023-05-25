@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+     <!--旧客户端消费者配置-->
+
+    <bean name="MyMessageListener" class="com.consumer.MyMessageListener"/>
+    <!--<bean id="oldConsumer" class="com.suning.kafka.client.consumer.SnKafkaConsumerFactory">-->
+      <!--<property name="topic" value="kafka20601"/>-->
+      <!--<property name="listener" ref="MyMessageListener"/>-->
+      <!--<property name="properties">-->
+          <!--<props>-->
+              <!--<prop key="group.id">BDMS_kafka20601_test01</prop>-->
+          <!--</props>-->
+      <!--</property>-->
+    <!--</bean>-->
+
+
+
+    <!--新客户端消费者配置-->
+    <bean id="newConsumer" class="com.suning.kafka.client.consumer.SnKafkaConsumer">
+        <constructor-arg name="topics">
+            <array>
+                <value>kafka20601</value>
+            </array>
+        </constructor-arg>
+        <constructor-arg name="properties">
+            <props>
+                <prop key="group.id">BDMS_kafka20601_test01</prop>
+                <prop key="key.deserializer">org.apache.kafka.common.serialization.LongDeserializer</prop>
+                <prop key="value.deserializer">org.apache.kafka.common.serialization.StringDeserializer</prop>
+            </props>
+        </constructor-arg>
+        <property name="listener" ref="MyMessageListener"/>
+        <!--<property name="sleepingMode" value="true"/>-->
+    </bean>
+</beans>

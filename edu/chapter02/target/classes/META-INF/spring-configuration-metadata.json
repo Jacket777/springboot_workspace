@@ -1,0 +1,64 @@
+{
+  "groups": [
+    {
+      "name": "example",
+      "type": "com.itheima.domain.Example",
+      "sourceType": "com.itheima.domain.Example"
+    },
+    {
+      "name": "person",
+      "type": "com.itheima.domain.Person",
+      "sourceType": "com.itheima.domain.Person"
+    },
+    {
+      "name": "test",
+      "type": "com.itheima.domain.MyProperties",
+      "sourceType": "com.itheima.domain.MyProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person.family",
+      "type": "java.lang.String[]",
+      "sourceType": "com.itheima.domain.Person"
+    },
+    {
+      "name": "person.hobby",
+      "type": "java.util.List",
+      "sourceType": "com.itheima.domain.Person"
+    },
+    {
+      "name": "person.id",
+      "type": "java.lang.Integer",
+      "sourceType": "com.itheima.domain.Person",
+      "defaultValue": 0
+    },
+    {
+      "name": "person.map",
+      "type": "java.util.Map",
+      "sourceType": "com.itheima.domain.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.domain.Person"
+    },
+    {
+      "name": "person.pet",
+      "type": "com.itheima.domain.Pet",
+      "sourceType": "com.itheima.domain.Person"
+    },
+    {
+      "name": "test.id",
+      "type": "java.lang.Integer",
+      "sourceType": "com.itheima.domain.MyProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "test.name",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.domain.MyProperties"
+    }
+  ],
+  "hints": []
+}
